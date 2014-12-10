@@ -1,4 +1,13 @@
 texEnv-by-pandoc-Markdown
 =========================
 
-This is texEnv by pandoc Markdown
++ 2014 12月 作成
++ uplatex でで論文を書くためのファイル構成
++ .md => .tex の pandoc を使用して、できる限り tex 記法を目に入れずに執筆作業に集中できるように作成した。
++ $ rake -T でコマンドを見る。Rakefile の動作を mac でしか確認していない。
+
+
+todo
+----------------
++ 図、グラフの開発環境を整える。
++ 画像群から、eps (or pdf) ファイルに変換し、容易に論文に挿入できる状態を整える。
