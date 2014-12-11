@@ -6,10 +6,10 @@ def mylog(msg = '')
 	printf "\x1b[38;05;10m\n"
 end
 
-desc '[build, clean]'
+desc 'Multi tasks : [build, clean]'
 task :default => ["build", 'clean']
 
-desc "(Pandoc) sections.src/*.md => sections/*.tex (uplatex, dvipdfmx) ./thesis.tex => ./build/thesis.pdf"
+desc "Update sections/**.tex and build/#{name}.pdf"
 task :build do
 	Dir.glob("sections.src/*.md").map do |md|
 		tex = md.sub("sections.src", "sections").sub(".md", ".tex")
@@ -23,13 +23,13 @@ task :build do
 	puts `mv #{name}.pdf build/`
 end
 
-desc 'clean others'
+desc 'Clean current directory files'
 task :clean do
 	`rm *.log`
 	`rm *.dvi `
 	mylog 'cleaning'
 end
-desc "alias for open #{name}.pdf"
+desc "Alias to open #{name}.pdf"
 task :open do
 	`open build/thesis.pdf`
 end
